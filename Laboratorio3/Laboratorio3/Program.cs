@@ -10,6 +10,10 @@ namespace Laboratorio3
     {
         static void Main(string[] args)
         {
+            Cajero p = new Cajero("hugo", "f", "d", "y", "d","e");
+            p.Hola();
+            Console.ReadKey();
+
         }
     }
 }
