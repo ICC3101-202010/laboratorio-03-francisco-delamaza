@@ -15,7 +15,7 @@ namespace Laboratorio3
         private string nacionalidad;
         private string sexo;
 
-
+        List<Cajero> Cajeros = new List<Cajero>();
         public Persona(string rut,string nombre,string apellido,string fecha_nacimiento, string nacionalidad,string sexo)
 
         {

@@ -8,8 +8,9 @@ namespace Laboratorio3
 {
     class Supervisor : Persona
     {
+        private string sueldo;
         List<Supervisor> Supervisores = new List<Supervisor>();
-        public Supervisor(string rut, string nombre, string apellido, string fecha_nacimiento, string nacionalidad, string sexo)
+        public Supervisor(string rut, string nombre, string apellido, string fecha_nacimiento, string nacionalidad, string sexo, string sueldo)
             : base(rut, nombre, apellido, fecha_nacimiento, nacionalidad, sexo)
         {
 

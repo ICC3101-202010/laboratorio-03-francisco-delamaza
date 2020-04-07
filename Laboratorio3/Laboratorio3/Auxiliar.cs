@@ -8,11 +8,12 @@ namespace Laboratorio3
 {
     class Auxiliar:Persona
     {
+        private string sueldo;
         List<Auxiliar> Auxiliares = new List<Auxiliar>();
-        public Auxiliar(string rut, string nombre, string apellido, string fecha_nacimiento, string nacionalidad, string sexo)
+        public Auxiliar(string rut, string nombre, string apellido, string fecha_nacimiento, string nacionalidad, string sexo, string sueldo)
             : base(rut, nombre, apellido, fecha_nacimiento, nacionalidad, sexo)
         {
-
+            this.sueldo = sueldo;
         }
     }
 }
