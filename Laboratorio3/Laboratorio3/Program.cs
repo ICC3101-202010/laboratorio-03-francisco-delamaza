@@ -11,6 +11,11 @@ namespace Laboratorio3
         static void Main(string[] args)
         {
             Producto prop = new Producto(" ", 0, " ", 6);
+            Cliente ccc = new Cliente(" ", " ", " ", " ", " ", " ");
+            Cajero jer = new Cajero(" ", " ", " ", " ", " ", " "," ");
+            List<Producto> hola = new List<Producto> { prop };
+            var list = new List<Cajero>();
+            Registro los = new Registro(ccc, jer,hola );
             bool showMenu = true;
             while (showMenu)
             {
@@ -52,6 +57,9 @@ namespace Laboratorio3
                         Console.WriteLine("Sueldo:");
                         string h = Console.ReadLine();
                         Cajero caj = new Cajero(a, b, c, d, e, g, h);
+                        
+                        list.Add(caj);
+                        
 
                     }
                     if (g == "Supervisor")
@@ -91,9 +99,16 @@ namespace Laboratorio3
                 }
                 if (x == "3")
                 {
-                    bool sMenu = true;
+                    
+                       
+                    
+                
+                        bool sMenu = true;
                     while (sMenu)
                     {
+
+
+                        var productoscomprados = new List<Producto>();
                         Console.WriteLine("Datos del Cliente");
                         Console.WriteLine();
                         Console.WriteLine("Rut:");
@@ -108,25 +123,64 @@ namespace Laboratorio3
                         string e = Console.ReadLine();
                         Console.WriteLine("Sexo:");
                         string f = Console.ReadLine();
-
+                        Cliente cli = new Cliente(a, b, c, d, e, f);
+                        ccc.Registroclientes(cli);
                         Console.WriteLine();
                         Console.WriteLine("Agregar productos al carrito, al finalizar ingrese comprar ");
                         bool cMenu = true;
-                        while(cMenu)
+                        while (cMenu)
                         {
                             string t = Console.ReadLine();
-                            if (t=="comprar")
+                            if (t == "comprar")
                             {
-                                cMenu = false;
+                                var random = new Random();
+                                int index = random.Next(list.Count);
+
+                                Registro r = new Registro(cli, list[index], productoscomprados);
+                                los.Añadir(r);
+                                Console.WriteLine("1) Nuevo cliente");
+                                Console.WriteLine("2) Mostrar registro");
+                                Console.WriteLine("3) Salir");
+                                Console.WriteLine();
+                                string z = Console.ReadLine();
+                                if(z=="1")
+                                {
+                                    cMenu = false;
+
+                                }
+                                if(z=="2")
+                                {
+                                    r.Info();
+                                    Console.WriteLine("1)Para salir:");
+                                    Console.WriteLine("2)Para agregar un nuevo cliente");
+                                    string ñ = Console.ReadLine();
+                                    if(ñ=="1")
+                                    {
+                                        break;
+                                    }
+                                    if(ñ=="2")
+                                    {
+                                        cMenu = false;
+                                    }
+                                    
+                                }
+                                if(z=="3")
+                                {
+                                    break;
+                                }
+                                
                             }
                             else
                             {
-                                Console.WriteLine("es");
+
                                 prop.ComprarProducto(t);
+
                             }
                         }
-
                     }
+                       
+
+                    
                 
 
                 }

@@ -48,7 +48,7 @@ namespace Laboratorio3
                     Console.WriteLine("Producto agregado");
                     Console.WriteLine();
                     Console.WriteLine(p.InformacionP());
-
+                    
                     
                     
                 }
