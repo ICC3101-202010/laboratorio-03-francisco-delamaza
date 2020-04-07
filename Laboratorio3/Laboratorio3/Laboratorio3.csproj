@@ -46,7 +46,6 @@
     <Compile Include="Auxiliar.cs" />
     <Compile Include="Cajero.cs" />
     <Compile Include="Cliente.cs" />
-    <Compile Include="Empleado.cs" />
     <Compile Include="Jefe.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Producto.cs" />

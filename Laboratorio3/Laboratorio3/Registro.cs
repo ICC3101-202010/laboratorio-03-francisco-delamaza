@@ -10,15 +10,17 @@ namespace Laboratorio3
     {
         private string cliente;
         private string cajero;
-        private List<Producto> compras;
+        private List<string> compras;
+        private string fecha;
 
         static List<Registro> registro = new List<Registro>();
 
-        public Registro(Cliente cliente,Cajero cajero,List<Producto> compras)
+        public Registro(Cliente cliente,Cajero cajero,List<string> compras,string fecha)
         {
             this.cliente = cliente.Nombre;
             this.cajero = cajero.Nombre;
             this.compras = compras;
+            this.fecha = fecha;
         }
         public void Añadir(Registro regis)
 
@@ -30,15 +32,24 @@ namespace Laboratorio3
         {
             foreach(Registro r in registro)
             {
+                Console.WriteLine();
+                Console.WriteLine(r.fecha);
+                Console.WriteLine();
                 Console.WriteLine("Nombre cliente:");
                 Console.WriteLine(r.cliente);
+                Console.WriteLine();
                 Console.WriteLine("Nombre cajero:");
                 Console.WriteLine(r.cajero);
-                foreach (Producto i in compras)
+                Console.WriteLine();
+                Console.WriteLine("Productos: ");
+                foreach (string i in compras)
                 {
-                    Producto p = i;
-                    p.InformacionP();
+
+                    Console.WriteLine(i);
                 }
+                Console.WriteLine();
+                Console.WriteLine();
+                
                
                 
 

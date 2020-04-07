@@ -13,12 +13,13 @@ namespace Laboratorio3
             Producto prop = new Producto(" ", 0, " ", 6);
             Cliente ccc = new Cliente(" ", " ", " ", " ", " ", " ");
             Cajero jer = new Cajero(" ", " ", " ", " ", " ", " "," ");
-            List<Producto> hola = new List<Producto> { prop };
+            List<string> hola = new List<string> {"hola" };
             var list = new List<Cajero>();
-            Registro los = new Registro(ccc, jer,hola );
+            Registro los = new Registro(ccc, jer, hola,"desf");
             bool showMenu = true;
             while (showMenu)
             {
+                Console.WriteLine();
                 Console.WriteLine("Cree trabajadores y productos, al estar listo presione elija comprar.");
                 Console.WriteLine();
                 Console.WriteLine("1) Crear persona:");
@@ -108,7 +109,7 @@ namespace Laboratorio3
                     {
 
 
-                        var productoscomprados = new List<Producto>();
+                        var productoscomprados = new List<string>();
                         Console.WriteLine("Datos del Cliente");
                         Console.WriteLine();
                         Console.WriteLine("Rut:");
@@ -133,11 +134,13 @@ namespace Laboratorio3
                             string t = Console.ReadLine();
                             if (t == "comprar")
                             {
+                                string fe = DateTime.Now.ToString();
                                 var random = new Random();
                                 int index = random.Next(list.Count);
 
-                                Registro r = new Registro(cli, list[index], productoscomprados);
+                                Registro r = new Registro(cli, list[index], productoscomprados,fe);
                                 los.Añadir(r);
+                                Console.WriteLine();
                                 Console.WriteLine("1) Nuevo cliente");
                                 Console.WriteLine("2) Mostrar registro");
                                 Console.WriteLine("3) Salir");
@@ -156,6 +159,9 @@ namespace Laboratorio3
                                     string ñ = Console.ReadLine();
                                     if(ñ=="1")
                                     {
+                                        cMenu = false;
+                                        sMenu = false;
+                                        showMenu = false;
                                         break;
                                     }
                                     if(ñ=="2")
@@ -166,6 +172,9 @@ namespace Laboratorio3
                                 }
                                 if(z=="3")
                                 {
+                                    cMenu = false;
+                                    sMenu = false;
+                                    showMenu = false;
                                     break;
                                 }
                                 
@@ -174,6 +183,7 @@ namespace Laboratorio3
                             {
 
                                 prop.ComprarProducto(t);
+                                productoscomprados.Add(t);
 
                             }
                         }

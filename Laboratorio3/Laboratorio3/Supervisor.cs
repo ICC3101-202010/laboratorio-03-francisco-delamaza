@@ -13,7 +13,7 @@ namespace Laboratorio3
         public Supervisor(string rut, string nombre, string apellido, string fecha_nacimiento, string nacionalidad, string sexo, string sueldo)
             : base(rut, nombre, apellido, fecha_nacimiento, nacionalidad, sexo)
         {
-
+            this.sueldo = sueldo;
         }
     }
 }
